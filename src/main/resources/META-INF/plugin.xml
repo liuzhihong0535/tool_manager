@@ -1,0 +1,36 @@
+<idea-plugin>
+    <id>com.liuzhihong</id>
+    <name>常用软件管理器</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="liuzhihong0535@gmail.com" url="https://github.com/liuzhihong0535">刘志红</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description>
+        <![CDATA[开发的时候经常运行一大堆软件，有时候会有一些脚本需要重启如本地的ShardingSphere-Proxy、Elasticsearch集群等，很麻烦。可以直接使用这个插件把常用脚本或者文件添加进去，通过右键Find in Explore快速寻找文件或者脚本位置]]>
+    </description>
+
+    <idea-version since-build="242.0" until-build="244.*"/>
+    <depends>com.intellij.modules.platform</depends>
+
+
+    <actions>
+        <action
+                id="ToolLauncherAction"
+                class="com.liuzhihong.demo.ToolLauncherAction"
+                text="Launch Tool"
+                description="Launch local tools from the IDE">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift L"/>
+        </action>
+    </actions>
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow factoryClass="com.liuzhihong.demo.ToolLauncherToolWindowFactory"
+                    id="ToolLauncherToolWindow"
+                    anchor="right"
+                    icon="/icons/1.svg"
+                    secondary="true"/>
+    </extensions>
+
+</idea-plugin>
