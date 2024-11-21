@@ -50,8 +50,5 @@ tasks {
         token.set(System.getenv("PUBLISH_TOKEN"))
     }
 
-    //打包插件
-    buildPlugin {
-        destinationDirectory.set(file("$buildDir/distributions"))
-    }
+
 }

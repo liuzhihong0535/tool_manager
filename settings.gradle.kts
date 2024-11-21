@@ -5,4 +5,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "工具管理器"
+rootProject.name = "tool_manager"
