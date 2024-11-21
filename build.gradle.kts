@@ -36,7 +36,7 @@ tasks {
     }
 
     runIde {
-        // This task will run the plugin in your IDE for testing
+        // 本地测试运行路径
         ideDir.set(file("D:\\ide\\IntelliJ IDEA 2024.3"))
     }
 
@@ -48,5 +48,10 @@ tasks {
 
     publishPlugin {
         token.set(System.getenv("PUBLISH_TOKEN"))
+    }
+
+    //打包插件
+    buildPlugin {
+        destinationDirectory.set(file("$buildDir/distributions"))
     }
 }
