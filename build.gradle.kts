@@ -8,6 +8,15 @@ group = "com.liuzhihong"
 version = "1.0-SNAPSHOT"
 
 repositories {
+    // 本地 Maven 仓库
+    mavenLocal()
+
+    // 腾讯中央仓库镜像
+    maven {
+        url = uri("https://mirrors.cloud.tencent.com/nexus/repository/maven-public/")
+    }
+
+    // Maven Central 兜底
     mavenCentral()
 }
 
